@@ -470,24 +470,24 @@ def _get_cell_info(bnd, cells):
 
         normalized_name = cell.name()
         short = ') %s' % normalized_name
-        color = '.5 0 0'
+        color = '.3 .5 .7'
         if isinstance(cell, Neuron):
             neuron_types = cell.type()
             if 'sensory' in neuron_types:
                 short = 'Se%s' % short
-                color = '1 .2 1'
+                color = '0.1 0.1 0.1'
             if 'interneuron' in neuron_types:
                 short = 'In%s' % short
-                color = '1 0 .4'
+                color = '0.8 0.8 0.8'
             if 'motor' in neuron_types:
                 short = 'Mo%s' % short
-                color = '.5 .4 1'
+                color = '0.4 0.4 0.4'
 
             neurotransmitter = cell.neurotransmitter()
         elif isinstance(cell, Muscle):
             neuron_types = ()
             neurotransmitter = ()
-            color = '0 0.6 0'
+            color = '0.6 0.6 0.6'
             short = 'Mu%s' % short
         else:
             # At this point, we should only have Neurons and Muscles because the reader
